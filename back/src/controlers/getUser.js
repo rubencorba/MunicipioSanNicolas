@@ -1,8 +1,10 @@
-const getAllUsers = async (req, res) => {
+const {User,Tramite}= require('../db.js');
 
-    return "Estos son todos los users"
-    
-}
+const getAllUsers = async()=> await User.findAll(
+    {include:[{model:Tramite,
+    as:'Tramites',
+attributes:["name"],
+/* through:{attributes:[]} */}]})
    
 
 module.exports={getAllUsers}
