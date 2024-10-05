@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import './createStyles.css';
 import { postTramite } from '../../redux/actions';
 import { useDispatch } from 'react-redux';
+import Navbar from '../../components/navbar/navbarComponent';
 
 function Create() {
 
@@ -82,6 +83,8 @@ function Create() {
     };
 
   return (
+    <div>
+    <Navbar></Navbar>
     <div className="min-h-screen flex items-center justify-center bg-gray-100">
       <div className="bg-white p-8 rounded-lg shadow-lg max-w-md w-full my-24">
     <form onSubmit={handleSubmit}>
@@ -258,6 +261,8 @@ function Create() {
     {/* </div> */}
     </form>
     </div>
+    </div>
+
     </div>
   );
 }

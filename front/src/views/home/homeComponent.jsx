@@ -2,15 +2,28 @@ import { useEffect } from 'react';
 import './homeStyles.css';
 import { useDispatch } from 'react-redux';
 import { getAllUsers } from '../../redux/actions';
+import Navbar from '../../components/navbar/navbarComponent';
+
+import nuevoTramiteLogo from './NuevoTramite.jpg'
+import { useNavigate } from 'react-router-dom';
 
 function Home() {
-  /* const dispatch= useDispatch();
-  useEffect (()=>{
-    dispatch(getAllUsers());
-  },[dispatch]) */
+
+  const navigate = useNavigate();
+
+  const navegar = () =>{
+    navigate('/create')
+  }
+
   return (
     <div>
-      <p>Este es el home</p>
+      <Navbar></Navbar>
+      <div className="flex flex-col items-center mt-10 min-h-screen">
+      <button onClick={navegar}>
+        <img src={nuevoTramiteLogo} alt="nuevoTramiteLogo" className="w-[10rem]" />
+        <p className="hover:text-blue-500">Nuevo Trámite</p>
+      </button>
+      </div>
     </div>
   );
 }
