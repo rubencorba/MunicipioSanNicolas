@@ -23,14 +23,26 @@ module.exports = (sequelize) => {
         min: 1,
       } */
     },
-    /* duracion:{
-      type:DataTypes.INTEGER,
+    fechaNacimiento:{
+      type:DataTypes.STRING,
       allowNull:true
     },
-    temporada:{
-      type:DataTypes.ENUM('verano','otoño','invierno','primavera'),
+    domicilio:{
+      type:DataTypes.STRING,
       allowNull:false
-    }, */
+    },
+    sexo:{
+      type:DataTypes.ENUM('Masculino','Femenino','Otro'),
+      allowNull:false
+    },
+    estado:{
+      type:DataTypes.ENUM('pendiente','aprobado','rechazado'),
+      allowNull:false
+    },
+    imagen: {
+      type: DataTypes.STRING,  // Aquí solo almacenamos la ruta del archivo o el nombre del archivo
+      allowNull: true,
+    }
   },
     {timestamps:false});
 };
