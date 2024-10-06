@@ -19,7 +19,7 @@ function Landing() {
         navigate('/home')
     }else if (usuario==="admin" && contraseña==="123asd"){
       dispatch(updateCurrentUser('admin'))
-      navigate('/home')
+      navigate('/allTramites')
     }else{
         throw Error("Usuario o contraseña incorrectos")
     }

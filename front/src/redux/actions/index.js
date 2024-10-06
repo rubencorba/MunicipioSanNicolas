@@ -60,6 +60,7 @@ export const getAllTramites=()=>{
         info.UserId= 1;
         info.estado= "pendiente";
         info.comentario='';
+        info.domicilio= info.domicilio + ' ' + info.numero + ' ' + '(' + info.dptoPiso + ')' 
         try {
             const endpoint='http://localhost:3001/tramite';
             return async (dispatch)=>{

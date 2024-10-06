@@ -1,4 +1,4 @@
-import {Route,Routes, useLocation} from "react-router-dom";
+import {Route,Routes} from "react-router-dom";
 
 import { Fragment, useEffect, useState } from 'react'
 import Navbar from "../../components/navbar/navbarComponent";
@@ -10,7 +10,7 @@ import NavBar2 from "../../components/navBar2/navBar2";
 
 
 
-function AllTramites() {
+function AllTramitesRechazados() {
 
     const dispatch= useDispatch()
 
@@ -19,54 +19,14 @@ function AllTramites() {
     }, []);
 
     const tramites = useSelector((state) => state.allTramites)
-    const tramitesPendientes = tramites.filter((tramite) => tramite.estado === 'pendiente')
-
-    const [comentario, setComentario]= useState('')
-    const [showPopup, setShowPopup] = useState(false);
-
-    const handleAprobar= (id)=>{
-       dispatch(updateTramiteAprobado(comentario,id))
-
-       setShowPopup(true);
-       
-    }
-    const handleRechazar= (id)=>{
-        dispatch(updateTramiteRechazado(comentario,id))
-
-        setShowPopup(true);
-       
-    }
+    const tramitesRechazados = tramites.filter((tramite) => tramite.estado === 'rechazado')
 
 
-    const actualizar= ()=>{
-      window.location.reload();
-    }
-    
-    
 
   return (
     <div>
     <Navbar></Navbar>
-   {/*  <nav class="bg-gradient-to-b from-gray-800 to-gray-600 p-4">
-  <div class="flex justify-center space-x-4">
-    <button class="text-white px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-700">
-      <a href="/allTramites">
-      Pendientes
-      </a>
-    </button>
-    <button class="text-white px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-700">
-      <a href="/allTramitesAprobados">
-      Aprobados
-      </a>
-    </button>
-    <button class="text-white px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-700">
-      <a href="/allTramitesRechazados">
-      Rechazados
-      </a>
-    </button>
-  </div>
-    </nav> */}
-  <NavBar2></NavBar2>
+    <NavBar2></NavBar2>
 
 
 
@@ -74,7 +34,8 @@ function AllTramites() {
 
 
 
-    {tramitesPendientes.map((tramite, index) => (
+
+    {tramitesRechazados.map((tramite, index) => (
     <div className="min-h-screen flex items-center justify-center bg-gray-100">
     <div className="bg-white p-8 rounded-lg shadow-lg max-w-md w-full my-24">
 
@@ -113,51 +74,15 @@ function AllTramites() {
           <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
             <dt className="text-sm font-medium leading-6 text-gray-900">Comentario</dt>
             <dd className="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">
-                <input
-                 type="text" 
-                 class="w-full h-16 text-xs p-4 border border-gray-300 rounded-md"
-                 
-                 onChange={(e) => {
-                    setComentario(e.target.value)
-                  }}/>
+            {tramite.comentario}
             </dd>
           </div>
-
-
-          <div class="flex justify-center space-x-4">
-  <button class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded" onClick={()=>handleAprobar(tramite.id)}>
-    Aprobar
-  </button>
-  <button class="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded" onClick={()=>handleRechazar(tramite.id)}>
-    Rechazar
-  </button>
-</div>
          
         </dl>
       </div>
     </div>
     </div>
     ))}
-
-     {/* Pop-up */}
-     {showPopup && (
-        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
-          <div className="bg-white p-6 rounded shadow-lg">
-            <p>Trámite actualizado exitosamente!!</p>
-            <button 
-              onClick={
-                () => {
-                  setShowPopup(false);
-                  actualizar()
-                }} 
-              className="mt-4 bg-blue-500 text-white px-4 py-2 rounded">
-              Cerrar
-            </button>
-          </div>
-        </div>
-      )}
-
-
     </div>
 
 
@@ -165,4 +90,4 @@ function AllTramites() {
   );
 }
 
-export default AllTramites;
+export default AllTramitesRechazados;
