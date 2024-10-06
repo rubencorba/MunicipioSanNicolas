@@ -6,7 +6,7 @@ import Navbar from '../../components/navbar/navbarComponent';
 
 function Create() {
 
-  const [input, setInput] = useState({})
+  const [input, setInput] = useState({sexo:'Masculino'})
   const dispatch = useDispatch()
   
 
@@ -73,6 +73,8 @@ function Create() {
     };
     /* *************************************************************************** */
 
+    const [showPopup, setShowPopup] = useState(false);
+
     useEffect(() => {
       setInput({ ...input, imagen: image })
     }, [image]);
@@ -80,6 +82,8 @@ function Create() {
     const handleSubmit = (event) => {
       event.preventDefault(); // Evita el comportamiento por defecto
       dispatch(postTramite(input))
+
+      setShowPopup(true);
     };
 
   return (
@@ -259,6 +263,23 @@ function Create() {
     </div>
     {/* </div> */}
     {/* </div> */}
+
+        {/* Pop-up */}
+      {showPopup && (
+        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
+          <div className="bg-white p-6 rounded shadow-lg">
+            <p>Trámite enviado exitosamente, podrá hacerle seguimiento en "Mis Trámites"</p>
+            <button 
+              onClick={() => setShowPopup(false)} 
+              className="mt-4 bg-blue-500 text-white px-4 py-2 rounded">
+              Cerrar
+            </button>
+          </div>
+        </div>
+      )}
+
+
+
     </form>
     </div>
     </div>

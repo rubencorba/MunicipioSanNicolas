@@ -3,15 +3,23 @@ import './landingStyles.css';
 import { useState } from 'react';
 
 import snLogo from './sn-logo.png'
+import { useDispatch } from 'react-redux';
+import { updateCurrentUser } from '../../redux/actions';
 
 function Landing() {
 
   const navigate = useNavigate();
+  const dispatch= useDispatch();
+
+
   const login= async (userData)=> {
     const { usuario, contraseña } = userData;
     if (usuario==="usuario" && contraseña==="123asd"){
+        dispatch(updateCurrentUser('user'))
         navigate('/home')
-        
+    }else if (usuario==="admin" && contraseña==="123asd"){
+      dispatch(updateCurrentUser('admin'))
+      navigate('/home')
     }else{
         throw Error("Usuario o contraseña incorrectos")
     }

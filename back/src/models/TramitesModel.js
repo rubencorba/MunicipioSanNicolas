@@ -42,6 +42,10 @@ module.exports = (sequelize) => {
     imagen: {
       type: DataTypes.STRING,  // Aquí solo almacenamos la ruta del archivo o el nombre del archivo
       allowNull: true,
+    },
+    comentario: {
+      type: DataTypes.STRING,  // Aquí solo almacenamos la ruta del archivo o el nombre del archivo
+      allowNull: true,
     }
   },
     {timestamps:false});
