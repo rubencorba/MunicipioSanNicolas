@@ -4,6 +4,7 @@ import { Fragment, useEffect, useState } from 'react'
 import Navbar from "../../components/navbar/navbarComponent";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllTramites, getAllUsers } from "../../redux/actions";
+import { all } from "axios";
 
 
 
@@ -17,10 +18,11 @@ function AllMyTramites() {
         dispatch(getAllTramites())
     }, []);
 
-    const tramitesPendientes = useSelector((state) => state.allTramites)
-    console.log(tramitesPendientes)
+    const allTramites = useSelector((state) => state.allTramites)
+    const currentUser = useSelector((state) => state.currentUser)
     
-
+    const misTramites = allTramites.filter((tramite) => tramite.UserId == currentUser)
+    
 
   return (
     <div>
@@ -40,7 +42,7 @@ function AllMyTramites() {
 
 
 
-    {tramitesPendientes.map((tramite, index) => (
+    {misTramites.map((tramite, index) => (
     <div className="min-h-screen flex items-center justify-center bg-gray-100">
     <div className="bg-white p-8 rounded-lg shadow-lg max-w-md w-full my-24">
 

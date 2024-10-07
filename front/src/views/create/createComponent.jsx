@@ -1,10 +1,12 @@
 import { useEffect, useState } from 'react';
 import './createStyles.css';
 import { postTramite } from '../../redux/actions';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import Navbar from '../../components/navbar/navbarComponent';
 
 function Create() {
+
+  const userId = useSelector((state) => state.currentUser)
 
   const [input, setInput] = useState({sexo:'Masculino'})
   const dispatch = useDispatch()
@@ -47,7 +49,6 @@ function Create() {
     }
 
   /* *************************************************************************** */
-    const [selectedFile, setSelectedFile] = useState(null);
     
     //Subir archivo desde el botón
     const handleFileChange = (event) => {
@@ -76,7 +77,10 @@ function Create() {
     const [showPopup, setShowPopup] = useState(false);
 
     useEffect(() => {
-      setInput({ ...input, imagen: image })
+      setInput({ 
+        ...input,
+        imagen: image,
+        UserId: userId }) //Si currentUser es 1, el UserId será 1
     }, [image]);
 
     const handleSubmit = (event) => {
