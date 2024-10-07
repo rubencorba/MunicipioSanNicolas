@@ -56,10 +56,10 @@ function Landing() {
 
 
   return (
-    <div class="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
+    <div class="flex min-h-full flex-col justify-center px-6 py-8 lg:px-8">
   <div class="sm:mx-auto sm:w-full sm:max-w-sm">
     <img class="mx-auto  w-auto" src={snLogo} alt="Your Company"/>
-    <h2 class="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">Ingreso a tu cuenta</h2>
+    <h2 class="mt-8 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">Ingreso a tu cuenta</h2>
   </div>
 
   <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
@@ -108,9 +108,18 @@ function Landing() {
       </div>
     </form>
 
-    <p class="mt-10 text-center text-sm text-gray-500">
+    <p class="mt-6 text-center text-sm text-gray-500">
       No estás registrado?
       <a /* href="#" */ class="font-semibold leading-6 text-indigo-600 hover:text-indigo-500">Crea una cuenta</a>
+    </p>
+    <p class="mt-6 text-center text-sm text-gray-500">
+      Usuario1: usuario | Contraseña: 123asd
+    </p>
+    <p class="mt-3 text-center text-sm text-gray-500">
+      Usuario2: usuario2 | Contraseña: 123asd
+    </p>
+    <p class="mt-3 text-center text-sm text-gray-500">
+      Administrador: admin | Contraseña: 123asd
     </p>
   </div>
 </div>
