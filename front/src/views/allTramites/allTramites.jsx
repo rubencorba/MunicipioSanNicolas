@@ -47,32 +47,7 @@ function AllTramites() {
   return (
     <div>
     <Navbar></Navbar>
-   {/*  <nav class="bg-gradient-to-b from-gray-800 to-gray-600 p-4">
-  <div class="flex justify-center space-x-4">
-    <button class="text-white px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-700">
-      <a href="/allTramites">
-      Pendientes
-      </a>
-    </button>
-    <button class="text-white px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-700">
-      <a href="/allTramitesAprobados">
-      Aprobados
-      </a>
-    </button>
-    <button class="text-white px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-700">
-      <a href="/allTramitesRechazados">
-      Rechazados
-      </a>
-    </button>
-  </div>
-    </nav> */}
   <NavBar2></NavBar2>
-
-
-
-
-
-
 
     {tramitesPendientes.map((tramite, index) => (
     <div className="min-h-screen flex items-center justify-center bg-gray-100">

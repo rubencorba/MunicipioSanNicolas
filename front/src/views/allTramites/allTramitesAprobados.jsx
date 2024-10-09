@@ -43,13 +43,6 @@ function AllTramitesAprobados() {
     <Navbar></Navbar>
     <NavBar2></NavBar2>
 
-
-
-
-
-
-
-
     {tramitesAprobados.map((tramite, index) => (
     <div className="min-h-screen flex items-center justify-center bg-gray-100">
     <div className="bg-white p-8 rounded-lg shadow-lg max-w-md w-full my-24">
@@ -99,8 +92,6 @@ function AllTramitesAprobados() {
     </div>
     ))}
     </div>
-
-
 
   );
 }

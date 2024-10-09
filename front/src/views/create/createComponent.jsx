@@ -52,19 +52,12 @@ function Create() {
     
     //Subir archivo desde el botón
     const handleFileChange = (event) => {
-      /* setSelectedFile(event.target.files[0]);
-      console.log(selectedFile)
-      uploadImage(selectedFile) */
       uploadImage(event.target.files[0])
     };
 
     //Subir archivo arrastrando
     const handleDrop =(event) => {
       event.preventDefault(); // Evita que el navegador abra el archivo
-      /* const file = event.dataTransfer.files[0]; */
-      /* const file = event.target.files[0]; */
-      /* setSelectedFile(event.dataTransfer.files[0]);
-      console.log(selectedFile) */
       uploadImage(event.dataTransfer.files[0])
 
     };
@@ -97,11 +90,8 @@ function Create() {
       <div className="bg-white p-8 rounded-lg shadow-lg max-w-md w-full my-24">
     <form onSubmit={handleSubmit}>
       <div class="space-y-12">
-        {/* <div class="border-b border-gray-900/10 pb-12"> */}
-        {/* <div class="border-b border-gray-900/10 pb-12"> */}
       <h2 class="text-base font-semibold leading-7 text-gray-900">Información personal para el Trámite</h2>
-      {/* <p class="mt-1 text-sm leading-6 text-gray-600">Use a permanent address where you can receive mail.</p> */}
-
+  
       <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
         <div class="sm:col-span-4">
           <label for="first-name" class="block text-sm font-medium leading-6 text-gray-900">Apellido y Nombre</label>
@@ -118,13 +108,6 @@ function Create() {
             }}/>
           </div>
         </div>
-
-        {/* <div class="sm:col-span-3">
-          <label for="last-name" class="block text-sm font-medium leading-6 text-gray-900">Last name</label>
-          <div class="mt-2">
-            <input type="text" name="last-name" id="last-name" autocomplete="family-name" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"/>
-          </div>
-        </div> */}
 
           <div class="sm:col-span-4">
             <label htmlFor="fecha-nacimiento" className="block text-sm font-medium text-gray-700 leading-6">
@@ -180,13 +163,6 @@ function Create() {
             </select>
           </div>
         </div>
-
-        {/* <div class="col-span-full">
-          <label for="street-address" class="block text-sm font-medium leading-6 text-gray-900">Street address</label>
-          <div class="mt-2">
-            <input type="text" name="street-address" id="street-address" autocomplete="street-address" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"/>
-          </div>
-        </div> */}
 
         <div class="sm:col-span-2 sm:col-start-1">
           <label for="city" class="block text-sm font-medium leading-6 text-gray-900">Calle</label>
@@ -283,8 +259,6 @@ function Create() {
         <button type="submit" class="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Enviar</button>
       </div>
     </div>
-    {/* </div> */}
-    {/* </div> */}
 
         {/* Pop-up */}
       {showPopup && (
