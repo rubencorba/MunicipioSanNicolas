@@ -1,7 +1,3 @@
-import { useEffect } from 'react';
-import './homeStyles.css';
-import { useDispatch } from 'react-redux';
-import { getAllUsers } from '../../redux/actions';
 import Navbar from '../../components/navbar/navbarComponent';
 
 import nuevoTramiteLogo from './NuevoTramite.jpg'

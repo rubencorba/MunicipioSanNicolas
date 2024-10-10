@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import './createStyles.css';
+
 import { postTramite } from '../../redux/actions';
 import { useDispatch, useSelector } from 'react-redux';
 import Navbar from '../../components/navbar/navbarComponent';

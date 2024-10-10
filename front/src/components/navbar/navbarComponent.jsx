@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import './navbarStyles.css';
+
 
 import snLogo2 from "./sn-sintesis.png"
 import { useSelector } from 'react-redux';

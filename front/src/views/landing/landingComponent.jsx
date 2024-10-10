@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import './landingStyles.css';
+
 import { useEffect, useState } from 'react';
 
 import snLogo from './sn-logo.png'
